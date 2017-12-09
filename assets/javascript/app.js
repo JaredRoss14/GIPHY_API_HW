@@ -30,7 +30,7 @@ $(document).ready(function(){
   	event.preventDefault(); //Prevents an event's default behavior (ex: stopping submit button from submitting a form when clicked)
 
   	var animal = $("#animal-input").val().trim(); //sets variable animal to inputted form value
-  	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=w5jW58lIwZV8xLAzlT1P6YZ0DfyIYhX8&limit=10"; //creates queryURL with search item
+  	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=w5jW58lIwZV8xLAzlT1P6YZ0DfyIYhX8&limit=10"; //creates queryURL with search item
 
   	animals.push(animal);
 
