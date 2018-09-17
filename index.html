@@ -1,51 +1,51 @@
 <!DOCTYPE html>
- <html lang="en-us">
-  <head>
-  	<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<title>GIPHY API | By Jared Ross</title>
-	</head>
-	<body>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>GIPHY API | By Jared Ross</title>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1 class="text-center">Giphy Search</h1>
+	</div>
 
-		<!-- **** Header Div **** -->
-		<div class="jumbotron">
-			<h1>Animal Gifs</h1>
-		</div>
-
-		<!-- **** Button Div **** -->
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12" id="giphy-buttons"></div>
+			<div class="offset-md-3 col-md-6 offset-xs-0 col-xs-12">
+				<form class="text-center">
+					<div class="form-group">
+						<label for="animal-input">Find A Gif</label>
+						<input type="text" id="animal-input">
+						<input id="animal-search" type="submit" value="Search">
+					</div>
+				</form>
+			</div>
+		</div>
+		
+
+		<div class="row">
+			<div class="text-center offset-md-1 col-md-10" id="giphy-buttons"></div>
 		</div>
 
 		<div class="row">
 			<!-- **** Giphy Container **** -->
-			<div class="col-md-9" id="giphy-here"></div>
-
-			<!-- **** Search Div **** -->
-			<div class="col-md-3">
-				<form id="animal-form">
-      		<label for="animal-input">Search for animals</label>
-      		<input type="text" id="animal-input"><br>
-      		<input id="animal-search" type="submit" value="Animal Search">
-    		</form>
-			</div>
+			<div class="col-md-12" id="giphy-here"></div>
 		</div>
+</div>
 
 
-
-	<!-- **** Footer Div **** -->
-	<footer>
-		<div class="container">
-			&copy; Copyright 2017 Jared Ross
-		</div>
-	</footer>
+<!-- **** Footer Div **** -->
+<footer>
+		&copy; Copyright 2017 Jared Ross
+</footer>
 
 <!-- **** Javascript & JQUERY **** -->
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="assets/javascript/app.js"></script>
-	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/javascript/app.js"></script>
+</body>
 </html>

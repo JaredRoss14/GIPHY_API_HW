@@ -1,30 +1,54 @@
-$(document).ready(function(){
+var animals = ["kitten",
+  "puppy",
+  "turtle",
+  "falcon",
+  "bunny",
+  "frog",
+  "chipmunk",
+  "lizard",
+  "shark",
+  "dolphin",
+  "cow",
+  "chicken",
+  "hedgehog",
+  "penguin",
+  "lion",
+  "zebra"];
 
-	var animals = ["kitten", "puppy", "turtle", "falcon", "bunny", "frog", "chipmunk", "lizard", "shark", "dolphin", "cow", "chicken", "hedgehog", "penguin", "lion", "zebra"];
+// Function to render buttons
+function renderButtons() {
 
-  function renderButtons() {
+  // Empty the gif buttons array
+  $("#giphy-buttons").empty();
 
-    // Deleting the movie buttons prior to adding new movie buttons
-    // (this is necessary otherwise we will have repeat buttons)
-    $("#giphy-buttons").empty();
+  // Dynamically generate buttons for each animal in the array. 
+  for (var i = 0; i < animals.length; i++) {
 
-    // Looping through the array of movies
-    for (var i = 0; i < animals.length; i++) {
+    // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+    var a = $("<button>");
 
-    	// Then dynamicaly generating buttons for each movie in the array.
-    	// This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-    	var a = $("<button>");
-    	// Adding a class
-    	a.addClass("animal btn-primary");
-    	// Adding a data-attribute with a value of the movie at index i
-    	a.attr("data-name", animals[i]);
-    	// Providing the button's text with a value of the movie at index i
-    	a.text(animals[i]);
-    	// Adding the button to the HTML
-    	$("#giphy-buttons").append(a);
-    }
-  };
+    // Adding classes to button
+    a.addClass("animal btn btn-primary");
 
+    // Adding a data-attribute
+    a.attr("data-name", animals[i]);
+
+    // Add text to the button
+    a.text(firstUpperCase(animals[i]));
+    // Adding the button to the HTML
+    $("#giphy-buttons").append(a);
+  }
+};
+
+// Function to capitalize the first letter of a word. 
+function firstUpperCase(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+
+$(document).ready(function () {
+  renderButtons();
   $("#animal-search").on("click", function(event) {
 
   	event.preventDefault(); //Prevents an event's default behavior (ex: stopping submit button from submitting a form when clicked)
@@ -77,17 +101,8 @@ $(document).ready(function(){
     });
 
 
-
-
-
-
-
-
-
-
-
-
-    $("button").on("click", function() {
+  $("btn").on("click", function () {
+      console.log("FIRSE")
       // In this case, the "this" keyword refers to the button that was clicked
       var animal = $(this).attr("data-name");
 
@@ -136,17 +151,6 @@ $(document).ready(function(){
           }
         });
     });
-
-
-
-
-
-
-
-
-
-
-
 
 renderButtons();
 });
